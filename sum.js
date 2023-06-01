@@ -1,14 +1,13 @@
-function sum(a, b) {
-    return a + b;
-}
-
-
 function capitalize(word) {
-    const capWord = word.toUpperCase()
-    return capWord
+    const firstLetter = word.charAt(0).toUpperCase() + word.slice(1)
+
+    return firstLetter
 }
 
+function reverseString(str) {
+    const revString = str.split("").reverse().join('')
+    return revString
+}
 
-console.log(capitalize('cat'))
-
-export { sum, capitalize }
+console.log(reverseString('cat'))
+export { capitalize, reverseString }

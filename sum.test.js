@@ -1,11 +1,11 @@
-import { sum, capitalize } from './sum.js'
+import { capitalize, reverseString } from './sum.js'
 
 
-test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
-});
 
+test('cat to beome Cat', () => {
+    expect(capitalize('cat')).toBe('Cat')
+})
 
-test('cat to beome CAT', () => {
-    expect(capitalize('cat')).toBe('CAT')
+test('cat to beome tac', () => {
+    expect(reverseString('cat')).toBe('tac')
 })
