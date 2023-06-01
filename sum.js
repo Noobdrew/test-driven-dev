@@ -9,5 +9,42 @@ function reverseString(str) {
     return revString
 }
 
-console.log(reverseString('cat'))
-export { capitalize, reverseString }
+const calculator = {
+    add(a, b) {
+        return a + b
+    },
+    subtract(a, b) {
+        return a - b
+    },
+    divide(a, b) {
+        return a / b
+    },
+    multiply(a, b) {
+        return a * b
+    }
+}
+
+function caesar(word, factor) {
+    if (factor < 0) {
+        return caesar(word, factor + 26)
+    }
+    let output = ''
+    for (let char of word) {
+
+        if (char.match(/[a-z]/i)) {
+            let code = char.charCodeAt(0)
+            if (code >= 65 && code <= 90) {
+                char = String.fromCharCode(((code - 65 + factor) % 26) + 65)
+            }
+            else if (code >= 97 && code <= 122) {
+                char = String.fromCharCode(((code - 97 + factor) % 26) + 97)
+            }
+        }
+        output += char
+    }
+    console.log(output)
+    return output
+};
+
+
+export { capitalize, reverseString, calculator, caesar }
