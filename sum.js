@@ -46,5 +46,27 @@ function caesar(word, factor) {
     return output
 };
 
+Array.prototype.max = function () {
+    return Math.max.apply(null, this);
+};
 
-export { capitalize, reverseString, calculator, caesar }
+Array.prototype.min = function () {
+    return Math.min.apply(null, this);
+};
+
+function analyze(arr) {
+    const sum = arr.reduce((prev, curr) => prev + curr, 0)
+    const average = sum / arr.length
+
+    return {
+        average: average,
+        min: arr.min(),
+        max: arr.max(),
+        length: arr.length
+    }
+}
+
+console.log(analyze([1, 2, 3]))
+
+
+export { capitalize, reverseString, calculator, caesar, analyze }
